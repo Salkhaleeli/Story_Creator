@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add New Story</title>
+  <link rel="stylesheet" href="/styles/create_story.css" type="text/css" />
+</head>
+<body>
+  <!--TODO: add navigation here (like tinyurl _header)-->
+  <section name="section-create-story">
+    <form id="create-story-form" method="POST" action="/new/story" >
+      <div class="publish-btn">
+        <button type="submit">Publish</button>
+      </div>
+      <div name="div-title">
+        <input class="new-title" type="text" name="title" placeholder="Story Title">
+      </div>
+
+      <div name="div-photo">
+        <input class="new-photo" type="url" name="photo_url" placeholder="Insert photo url">
+      </div>
+
+      <div name="div-content" class="div-content">
+        <textarea class="new-story" name="content" placeholder="Tell your story!!! "></textarea>
+      </div>
+
+      <div name="div-cancel">
+        <a href="#">Cancel</a>
+      </div>
+
+    </form>
+  </section>
+
+</body>
+</html>
