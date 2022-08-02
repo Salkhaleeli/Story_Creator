@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/_head') %>
+  <title>Story Creator - Home</title>
+  <link rel="stylesheet" href="/styles/stories.css" type="text/css" />
+  <%- include('_header') %>
+</head>
+
+<body>
+  <section class="main-story">
+    <div class="story-container first-story-container">
+      <div class="thumbnail-container">
+        <div class="image"style="background-image:url('<%= firstStory[0].photo_url %>');"> </div>
+      </div>
+      <div class="text-container">
+        <a href="/story/<%= firstStory[0].url_id %>">
+          <h1><%= firstStory[0].title %></h1>
+          <h3><%= (firstStory[0].content).slice(0, 100) %>...</h3>
+        </a>
+          <h4>By <%= firstStory[0].created_by %></h4>
+          <h4><%= firstStory[0].total_contributions %> contributions</h4>
+        <div class="status-container">
+          <h5><%= firstStory[0].created_at %></h5>
+          <h5>&centerdot;</h5>
+          <h5><%= firstStory[0].status %></h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stories">
+    <div id="title">
+      Latest
+    </div>
+    <% for (let story of stories) { %>
+      <div class="story-container">
+        <div class="text-container">
+          <a href="/story/<%= story.url_id %>">
+            <h1><%= story.title %></h1>
+            <h3><%= (story.content).slice(0, 100) %>...</h3>
+          </a>
+            <h4>By <%= story.created_by %></h4>
+            <h4><%= story.total_contributions %> contributions</h4>
+            <div class="status-container">
+              <h5><%= story.created_at %></h5>
+              <h5>&centerdot;</h5>
+              <h5><%= story.status %></h5>
+            </div>
+        </div>
+        <div class="thumbnail-container">
+          <div class="image"style="background-image:url('<%= story.photo_url %>');"> </div>
+        </div>
+      </div>
+    <% } %>
+  </section>
+</body>
+
+<script src=""></script>
+
+</html>

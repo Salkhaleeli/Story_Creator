@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/_head') %>
+  <title>Edit Your Story - Story Creator</title>
+  <link rel="stylesheet" href="/styles/update.css" type="text/css" />
+</head>
+<body>
+  <%- include('_header') %>
+  <section class='pt-60 edit-story'>
+    <form method="POST" action="/update/<%= story.storyurl_id %>">
+      <div class="update-btn">
+        <button type="submit">Submit Changes</button>
+      </div>
+      <div class="section-title">
+        <input class="update-title" type="text" name="title" value="<%= story.title %>">   
+      </div>
+  
+      <div class="section-photo">
+        <input class="update-photo" type="url" name="photo_url" placeholder="Insert a photo" value="<%= story.photo_url %>">
+      </div>
+
+      <div class="section-content">
+        <textarea class="update-story" name="content"><%= story.content %></textarea>
+      </div>
+  
+      <div>
+        <a href='#'>Cancel</a>
+      </div>
+  
+    </form>
+  </section>
+  
+</body>
+</html>

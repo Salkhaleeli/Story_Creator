@@ -32,7 +32,6 @@ module.exports = (db) => {
       req.body.content,
       req.body.photo_url,
       generateRandomId(6)];
-
     console.log(queryString, queryParams);
     return db.query(queryString, queryParams)
       .then(result => {
