@@ -4,25 +4,25 @@ const { generateRandomId } = require('../lib/data-helpers.js');
 const authMiddlewareRedirect = require('./authMiddlewareRedirect');
 
 module.exports = (db) => {
-  
+
   // render create story form
   router.get("/", (req, res) => {
     res.render('createstory');
   });
-    
+
   router.post("/story", authMiddlewareRedirect(db), (req, res) => {
     // const user_id = req.session.user_id;
     // dummy owner_id
     const user_id = req.session.userId;
     const queryString = `
     INSERT INTO stories (
-      owner_id, 
+      owner_id,
       title,
       content,
       photo_url,
       storyurl_id
     )
-    VALUES ($1, $2, $3, $4, $5) 
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING *
     ;`;
 
@@ -32,7 +32,6 @@ module.exports = (db) => {
       req.body.content,
       req.body.photo_url,
       generateRandomId(6)];
-    
     console.log(queryString, queryParams);
     return db.query(queryString, queryParams)
       .then(result => {
