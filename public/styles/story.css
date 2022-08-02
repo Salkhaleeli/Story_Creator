@@ -1,0 +1,157 @@
+div:empty {
+  display: none;
+}
+
+.story-page {
+  padding: 30px 100px;
+  margin: 0px calc(5% - 20px) 0px 5%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  background-color: #03A89C;
+}
+
+.story-content {
+  padding: 50px 0;
+  word-wrap: break-word;
+}
+
+.story-content p {
+  margin-bottom: 2em;
+
+}
+
+.story-content #appended-content div {
+  margin-bottom: 2em;
+  font-size: 1em;
+}
+
+.story-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.story-title {
+  font-size: 2em;
+  padding: 20px 0;
+  font-weight: lighter;
+  line-height: 1.3em;
+}
+
+.story-photo {
+  max-width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 20px 0;
+}
+
+.edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 0.7em;
+  margin-left: auto;
+}
+
+.edit button {
+  background-color: #03A89C;
+  color: #FFFFFF;
+  border-radius: 4px;
+  border: 2px solid #03A89C;
+  padding: 7px 9px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#markcomplete {
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+
+.contribution-form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px 2px rgba(204, 198, 204, 0.45);
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+#new-post-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#post-input {
+  width: 100%;
+  border: none;
+  margin: 20px 0;
+}
+
+.add-post-btn {
+  align-self: flex-end;
+}
+
+.add-post-btn button {
+  background-color: #03A89C;
+  color: #FFFFFF;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 2px solid #03A89C;
+  padding: 15px 12px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+#posts-container {
+  margin-top: 20px;
+}
+
+div.like-btn {
+  border: none;
+  margin-right: 0;
+}
+
+.like-btn, .append-btn {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #F2F2F2;
+  display: inline-block;
+  margin: 0 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #636363;
+}
+
+.contribution-container .appended {
+  border: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 0.8em;
+}
+
+.contribution-content {
+  padding: 10px;
+  background-color: rgb(250 250 250);
+}
+
+.contribution-container {
+  border-bottom: 1px solid #F2F2F2;
+  padding: 10px;
+  margin: 12px 0;
+}
+
+.liked-color i {
+  color: #80bf1d;
+}

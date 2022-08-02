@@ -1,0 +1,77 @@
+/* Debugging Styling. Remove for production */
+.topnav {
+  overflow: hidden;
+  background-color: white;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 1px 7px #e8e5e5;
+  padding-left: calc(5% + 100px);
+}
+
+.topnav a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.685);
+  padding-right: 20px;
+}
+
+.leftnav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.leftnav .create-story-btn {
+  margin-top: -3px;
+}
+
+.rightnav {
+  display: flex;
+  flex-direction: row;
+  padding-right: calc(5% + 70px);
+}
+
+.topnav .leftnav .create-story-btn {
+  font-size: 1.8em;
+  color: #333;
+  font-weight: 700;
+}
+
+.topnav .leftnav .create-story-btn:hover {
+  font-weight: 600;
+}
+
+.topnav .leftnav .all-stories-btn:hover {
+  color: black;
+}
+
+.topnav .rightnav .login-btn:hover {
+  color: #159615;
+}
+
+.topnav .rightnav .register-btn {
+  padding-right: 20px;
+}
+
+.topnav .rightnav .register-btn:hover {
+  color: #159615;
+}
+
+.topnav .rightnav .logout-btn:hover {
+  color: #159615;
+}
+
+.topnav .rightnav .logout-btn {
+  display: none;
+}
+
+@media only screen and (max-width: 667px) {
+  .topnav {
+    padding-left: 20px;
+  }
+  .rightnav {
+    padding-right: 20px;
+  }
+}
