@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/_head') %>
+  <title>Story Creator - <%= story.title %></title>
+  <link rel="stylesheet" href="/styles/story.css">
+</head>
+<body>
+  <%- include('_header') %>
+  <!-- story specific content here -->
+  <main>
+    <section class="story-page">
+      <section class="story-container">
+        <!-- story section -->
+        <div class="story-title-container">
+          <div>
+            <h3 class="story-title"><%= story.title %></h3>
+          </div>
+          <% if (!story.is_complete && isOwner) { %>
+          <div class="edit">
+            <button id="markcomplete" type="submit">Mark Completed</button>
+            <a href="/update/<%= story.storyurl_id %>"><button>Edit Story</button></a>
+          </div>
+          <% } %>
+      </div>
+        <div class="story-photo" style="background-image:url('<%= story.photo_url %>');">
+
+          <!-- <img src='<%= story.photo_url %>'/> -->
+        </div>
+        <div class="story-content">
+          <p><%= story.content %></p>
+          <div id="appended-content">
+            <!-- accepted contributions -->
+          </div>
+        </div>
+      </section>
+      <% if (!story.is_complete) { %>
+        <section class="contribution-form">
+          <p class="errormsg" id="emptyfield"><i class="fas fa-exclamation-triangle"></i> please enter text <i class="fas fa-exclamation-triangle"></i></i></p>
+          <form id="new-post-form" action="/api/story/<%= story.storyurl_id %>/contributions" method="POST">
+            <textarea id="post-input" type="text" name="content" placeholder="What would you like to add to this story?"></textarea>
+            <div class="add-post-btn">
+              <button type="submit">contribute</button>
+            </div>
+          </form>
+        </section>
+        <section id="posts-container">
+          <!-- user generated contributions from database -->
+        </section>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>
+  <!-- App JS -->
+  <script type="text/javascript" src="../scripts/app.js"></script>

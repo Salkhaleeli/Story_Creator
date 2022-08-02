@@ -1,57 +1,102 @@
 // load .env data into process.env
-require("dotenv").config();
+require('dotenv').config();
 
 // Web server config
-const PORT = process.env.PORT || 8080;
-const sassMiddleware = require("./lib/sass-middleware");
-const express = require("express");
-const app = express();
-const morgan = require("morgan");
+const PORT       = process.env.PORT || 8080;
+const ENV        = process.env.ENV || "development";
+
+const express    = require("express");
+const bodyParser = require("body-parser");
+const sass       = require("node-sass-middleware");
+const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
 
 // PG database client/connection setup
-const { Pool } = require("pg");
-const dbParams = require("./lib/db.js");
+const app       = express();
+const { Pool } = require('pg');
+const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
 db.connect();
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
-app.use(morgan("dev"));
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(cookieSession({
+  name: 'user_id',
+  keys: ['key1']
+}));
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: true }));
-
-app.use(
-  "/styles",
-  sassMiddleware({
-    source: __dirname + "/styles",
-    destination: __dirname + "/public/styles",
-    isSass: false, // false => scss, true => sass
-  })
-);
+app.use(express.json());
+app.use("/styles", sass({
+  src: __dirname + "/styles",
+  dest: __dirname + "/public/styles",
+  debug: true,
+  outputStyle: 'expanded'
+}));
 
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+// Cookie Session
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 
 // Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
+const userLogin = require("./routes/login");
+const submitLogin = require("./routes/submitLogin");
+const storyRoutes = require("./routes/story");
+const toHomePage = require("./routes/home");
+const createRoutes = require("./routes/createstory");
+const updateRoutes = require("./routes/updatestory");
+const displayStory = require("./routes/storytop");
+const registerUser = require("./routes/register");
+const registered = require("./routes/submitRegister");
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
-// Note: mount other resources here, using the same pattern above
+const authMiddlewareRedirect = require("./routes/authMiddlewareRedirect");
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
+/**
+ * API ROUTES
+ */
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// Route to get contributions
+app.use("/api/story", storyRoutes.createContribution(db));
+app.use("/api/story", storyRoutes.getContributions(db));
+
+app.use("/api/story", storyRoutes.appendContribution(db));
+app.use("/api/story", storyRoutes.likeContribution(db));
+
+app.use("/api/story", storyRoutes.completeStory(db));
+
+// Registration and login
+app.use("/register", registerUser(db));
+app.use("/api/register", registered.submitRegister(db));
+app.use("/login",userLogin.toLogin(db));
+app.use("/api/login", submitLogin.toSubmit(db));
+
+// home pages
+app.use("/", toHomePage(db));
+// app.use("/stories", toHomePage(db));
+
+// create and update story
+app.use("/new", createRoutes(db));
+app.use("/update", authMiddlewareRedirect(db), updateRoutes(db));
+app.use("/story", displayStory(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+module.exports = app;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/_head') %>
+    <title>Stories</title>
+    <link rel="stylesheet" href="/styles/completestory.css" type='text/css'/>
+    <%- include('_header') %>
+  </head>
+<body>
+  <section class='story-container'>
+    <div>
+      <h1 class='complete-title'><%= story.title %></h1>
+    </div>
+
+    <div class='complete-info'>
+      <div class='complete-user'>
+        <div><%= story.username%></div>
+        <div><%= story.created_at %> 
+          <span>&centerdot;</span>
+          <span class='status'>Completed</span>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div>
+      <!-- <img src="<%=story.photo_url%>" alt="" class='complete-img'> -->
+      <div class='complete-img' style ="background-image: url('<%=story.photo_url%>');"></div>
+    </div>
+    <div>
+      <div class='complete-content'><%=story.content%></div>
+
+      <% for (let contribution of contributions) { %>
+        <div class='complete-contribitions-container'>
+          <div class='contribition-content'><%=contribution.content%>  <span>- by <%=contribution.username%></span></div>
+        </div>
+      <% } %>
+    </div>
+  </section>
+</body>
+</html>

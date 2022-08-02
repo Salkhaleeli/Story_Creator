@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/_head') %>
+  <title>New Story - Story Creator</title>
+  <link rel="stylesheet" href="/styles/create.css" type="text/css" />
+</head>
+<body>
+  <%- include('_header') %>
+  <section class='pt-60 create-story'>
+    <form id="create-story-form" method="POST" action="/new/story" >
+      <div class="publish-btn">
+        <button type="submit">Publish</button>
+      </div>
+      <div class="section-title">
+        <input class="new-title" type="text" name="title" placeholder="Title">   
+      </div>
+
+      <div class="section-photo">
+        <input class="new-photo" type="url" name="photo_url" placeholder="Insert a photo url">
+      </div>
+
+      <div class="section-content">
+        <textarea class="new-story" name="content" placeholder="Tell your story..."></textarea>
+        <!-- <input class="new-story" type="textarea" name="content" placeholder="Tell your story..."> -->
+      </div>
+  
+  
+      <div>
+        <a href='#'>Cancel</a>
+      </div>
+  
+    </form>
+  </section>
+  
+</body>
+</html>
