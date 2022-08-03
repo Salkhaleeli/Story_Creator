@@ -12,16 +12,7 @@ body {
   background-color: #776BCC;
 }
 
-.input {
-	border: none;
-	border-bottom: 2px solid #D1D1D4;
-	background: none;
-	padding: 10px;
-	padding-left: 24px;
-	font-weight: 700;
-	width: 75%;
-	transition: .2s;
-}
+
 
 .input:active,
 .input:focus,
@@ -365,11 +356,11 @@ h4 {
   color: #222;
   font-family: Roboto, Arial, sans-serif;
   height: 90vmin;
-  left: 30%;
+  left: 25%;
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  width: 70vmin;
+  width: 55vmin;
 
 
 }
@@ -380,7 +371,7 @@ h4 {
   width: 50%;
 }
 .animated-title > div div {
-  font-size: 9vmin;
+  font-size: 6vmin;
   padding: 2vmin 0;
   position: absolute;
 }

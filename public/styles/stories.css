@@ -141,3 +141,23 @@ section {
     width: 100%;
   }
 }
+
+.line{
+  border-bottom: 1px solid #ccc;
+  display: block;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+}
+
+#main-references{
+  margin-top: 10%;
+  border-left: black;
+}
+#main-references .anchor{
+  display: flex;
+  margin-bottom: 20%;
+}

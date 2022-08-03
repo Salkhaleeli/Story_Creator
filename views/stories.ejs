@@ -9,26 +9,38 @@
 </head>
 
 <body>
-  <section class="main-story">
-    <div class="story-container first-story-container">
-      <div class="thumbnail-container">
-        <div class="image"style="background-image:url('<%= firstStory[0].photo_url %>');"> </div>
-      </div>
-      <div class="text-container">
-        <a href="/story/<%= firstStory[0].url_id %>">
-          <h1><%= firstStory[0].title %></h1>
-          <h3><%= (firstStory[0].content).slice(0, 100) %>...</h3>
-        </a>
-          <h4>By <%= firstStory[0].created_by %></h4>
-          <h4><%= firstStory[0].total_contributions %> contributions</h4>
-        <div class="status-container">
-          <h5><%= firstStory[0].created_at %></h5>
-          <h5>&centerdot;</h5>
-          <h5><%= firstStory[0].status %></h5>
+  <div class="main-page">
+    <section class="main-story">
+      <div class="story-container first-story-container">
+        <div class="thumbnail-container">
+          <div class="image"style="background-image:url('<%= firstStory[0].photo_url %>');"> </div>
+        </div>
+        <div class="text-container">
+          <a href="/story/<%= firstStory[0].url_id %>">
+            <h1><%= firstStory[0].title %></h1>
+            <h3><%= (firstStory[0].content).slice(0, 100) %>...</h3>
+          </a>
+            <h4>By <%= firstStory[0].created_by %></h4>
+            <h4><%= firstStory[0].total_contributions %> contributions</h4>
+          <div class="status-container">
+            <h5><%= firstStory[0].created_at %></h5>
+            <h5>&centerdot;</h5>
+            <h5><%= firstStory[0].status %></h5>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <span class="line"></span>
+
+    <section id="main-references">
+      <div class="reference-title">
+        <h2>Want to learn how to write?</h2><br>
+        <a href="https://soyouwanttowrite.org/blogs/syww/the-top-10-tips-for-writing-great-short-stories" class="anchor">Click HERE</a><br>
+        <iframe width="430" height="255" src="https://www.youtube.com/embed/qg0_FinB6EE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+  </div>
 
   <section class="stories">
     <div id="title">
