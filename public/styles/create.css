@@ -19,11 +19,16 @@ section {
   border: none;
   font-size: 2em;
   padding-left: 10px;
+  margin-top: 20%;
+
 }
 
 .section-content {
   display: flex;
   min-height: 2000px;
+  justify-content: left;
+  margin-top: 20%;
+  border-color: #03A89C;
 }
 
 .new-story {
@@ -56,3 +61,9 @@ input:focus {
   color: #FFFFFF;
   padding: 5px;
 }
+
+#create-story-form{
+  display: flex;
+  flex-direction: column;
+}
+

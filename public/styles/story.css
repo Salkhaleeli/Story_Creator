@@ -9,7 +9,7 @@ div:empty {
   flex-direction: column;
   font-size: 1.3em;
   line-height: 1.5em;
-  background-color: #03A89C;
+  /* background-color: #03A89C; */
 }
 
 .story-content {
