@@ -36,7 +36,7 @@ $(function() {
           </div>
         </header>
         <div class="contribution-content">
-          <p>${escape(contribution.content)}</p>
+          <p>${escape(contribution.content)}</p> 
         </div>
         <footer>
           <div>${moment(contribution.created_at).fromNow(true)} ago</div>
