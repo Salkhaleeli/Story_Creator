@@ -2,6 +2,24 @@
 
 A Full-Stack app that allows registered users to create and post short stories. Other logged in users may add contributions to a short story which the owner of that story can review and choose which contribution they want to append to their story.
 
+## Screenshots
+
+Home page
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Home-page.png)
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Home-page2.png)
+
+Log-in page
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Log-in-page.png)
+
+Register page
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Register-user.png)
+
+Create story page
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Create-story.png)
+
+Stories page
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Stories-page.png)
+
 ## Project Setup
 
 The following steps are only for _one_ of the group members to perform.
