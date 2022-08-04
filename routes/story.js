@@ -37,19 +37,19 @@ const isStoryComplete = (db)=>{
 
 const getContributions = (db)=>{
   router.get("/:storyId/contributions", (req,res)=>{
-    let query = ` SELECT contributions.user_id AS user_id, 
-                  contributions.user_id AS user_id, 
-                  contributions.id AS id, 
-                  contributions.accepted AS accepted, 
-                  contributions.content AS content, 
-                  contributions.created_at AS created_at, 
+    let query = ` SELECT contributions.user_id AS user_id,
+                  contributions.user_id AS user_id,
+                  contributions.id AS id,
+                  contributions.accepted AS accepted,
+                  contributions.content AS content,
+                  contributions.created_at AS created_at,
                   count(contribution_likes.id) AS like_count,
                   users.username AS username
                 FROM contributions
                 JOIN users ON contributions.user_id = users.id
                 LEFT JOIN contribution_likes ON contribution_id = contributions.id
                 GROUP BY contributions.id, users.username
-                HAVING contributions.story_id = 
+                HAVING contributions.story_id =
                   (SELECT id FROM stories WHERE storyurl_id = $1 )
                 ORDER BY contributions.created_at DESC;`;
     const inputValues = [ req.params.storyId ];
@@ -80,10 +80,10 @@ const createContribution = (db)=>{
 
       const userId = req.session.userId;
 
-      let query = `INSERT INTO contributions 
+      let query = `INSERT INTO contributions
           (user_id, story_id, content)
-          VALUES ($1, 
-              (SELECT id FROM stories WHERE storyurl_id = $2), 
+          VALUES ($1,
+              (SELECT id FROM stories WHERE storyurl_id = $2),
             $3) RETURNING *;`;
 
       const inputValues = [
@@ -118,7 +118,7 @@ const likeContribution = (db)=>{
       console.log("--> Like contribution");
       const userId = req.session.userId;
 
-      let query = `INSERT INTO contribution_likes 
+      let query = `INSERT INTO contribution_likes
           (user_id, contribution_id)
           VALUES ($1, $2) RETURNING *;`;
 
@@ -151,15 +151,15 @@ const appendContribution = (db)=>{
       const userId = req.session.userId;
 
       const selectStoryQuery = `
-      SELECT owner_id 
-      FROM stories 
+      SELECT owner_id
+      FROM stories
       WHERE storyurl_id = $1;
       `;
 
       const updateContributionQuery = `
       UPDATE contributions
       SET accepted = TRUE
-      WHERE id = $1 
+      WHERE id = $1
       AND story_id = (SELECT id FROM stories WHERE storyurl_id = $2)
       RETURNING *
       ;`;
@@ -196,16 +196,15 @@ const completeStory = (db)=>{
     authMiddleware(db),
     isStoryComplete(db),
     (req,res)=>{
-    // TODO: should use user session
       const userId = req.session.userId;
-  
+
       let selectStoryQuery = `SELECT owner_id FROM stories WHERE storyurl_id = $1`;
-  
+
       let updateContributionDuery = `UPDATE stories
             SET is_complete = TRUE
             WHERE storyurl_id = $1 AND owner_id = $2
             RETURNING *;`;
-  
+
       db.query(selectStoryQuery, [req.params.storyId])
         .then(data => {
           if (userId !== data.rows[0].owner_id) {

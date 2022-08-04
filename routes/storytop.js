@@ -5,11 +5,10 @@ const moment = require('moment');
 module.exports = (db) => {
   router.get("/:storyId", (req, res) => {
 
-    // TEMPL SHOULD REMOVE
     const userId = req.session.userId;
 
     const queryString = `
-      SELECT title, 
+      SELECT title,
       content,
       is_complete,
       photo_url,
@@ -24,12 +23,12 @@ module.exports = (db) => {
 
 
     const queryStringContributions = `
-    SELECT contributions.content AS content, 
-      contributions.created_at AS created_at, 
+    SELECT contributions.content AS content,
+      contributions.created_at AS created_at,
       users.username AS username
     FROM contributions
     JOIN users ON contributions.user_id = users.id
-    WHERE contributions.story_id = 
+    WHERE contributions.story_id =
       (SELECT id FROM stories WHERE storyurl_id = $1
         AND contributions.accepted = TRUE)
     ORDER BY contributions.created_at ASC;`;
@@ -65,7 +64,7 @@ module.exports = (db) => {
         } else {
           return res.render('story', { story: results, isOwner});
         }
-        
+
       });
   });
 
