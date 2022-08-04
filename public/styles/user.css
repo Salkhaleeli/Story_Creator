@@ -61,6 +61,7 @@ section form label {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
+  font-size: larger;
 }
 
 section form .input {
@@ -105,6 +106,7 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-top: 14%;
 
 }
 
