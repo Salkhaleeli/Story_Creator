@@ -1,3 +1,8 @@
+body {
+  background-color: black;
+}
+
+
 section {
   padding: 100px 100px;
   margin: 0 auto 0 5%;
@@ -7,9 +12,9 @@ section {
 
 .new-title {
   width: 90%;
-  height: 100px;
+  height: 50px;
   border: none;
-  font-size: 5em;
+  font-size: 2em;
   padding-left: 10px;
 }
 
@@ -19,7 +24,7 @@ section {
   border: none;
   font-size: 2em;
   padding-left: 10px;
-  margin-top: 20%;
+  margin-top: 1%;
 
 }
 
@@ -27,7 +32,7 @@ section {
   display: flex;
   min-height: 2000px;
   justify-content: left;
-  margin-top: 20%;
+  margin-top: 1%;
   border-color: #03A89C;
 }
 
@@ -35,7 +40,7 @@ section {
   width: 90%;
   text-align: top;
   border: none;
-  font-size: 3em;
+  font-size: 2em;
   line-height: 100%;
   padding-top: 10px;
   padding-left: 10px;
