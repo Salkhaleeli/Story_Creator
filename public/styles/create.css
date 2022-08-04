@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: #776BCC;
 }
 
 
@@ -30,7 +30,7 @@ section {
 
 .section-content {
   display: flex;
-  min-height: 2000px;
+  min-height: 200px;
   justify-content: left;
   margin-top: 1%;
   border-color: #03A89C;
@@ -38,13 +38,14 @@ section {
 
 .new-story {
   width: 90%;
+  height: 30%;
   text-align: top;
-  border: none;
   font-size: 2em;
   line-height: 100%;
   padding-top: 10px;
   padding-left: 10px;
-  padding-bottom: 1950px;
+  padding-bottom: 50px;
+  /* margin-bottom: 2%; */
 }
 
 input:focus {
@@ -70,5 +71,6 @@ input:focus {
 #create-story-form{
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 

@@ -229,3 +229,11 @@ body {
 .new-story-details{
   color: rgb(188, 209, 204);
 }
+
+.main-page{
+  padding-left: 10%;
+}
+
+.stories{
+  padding-left: 13%;
+}

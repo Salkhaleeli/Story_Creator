@@ -109,6 +109,12 @@ h4 {
   padding-top: 14%;
 
 }
+.login-form1{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 
 
 
