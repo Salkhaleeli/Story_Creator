@@ -40,7 +40,6 @@ module.exports = (db) => {
         }
 
         const responseObj = { firstStory: results.splice(0,1), stories: results };
-        // console.log(responseObj);
         res.render('stories', responseObj);
       })
       .catch(err => {
