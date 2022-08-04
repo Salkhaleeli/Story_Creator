@@ -20,8 +20,10 @@
             <h1><%= firstStory[0].title %></h1>
             <h3><%= (firstStory[0].content).slice(0, 100) %>...</h3>
           </a>
+          <div class="new-story-details">
             <h4>By <%= firstStory[0].created_by %></h4>
             <h4><%= firstStory[0].total_contributions %> contributions</h4>
+          </div>
           <div class="status-container">
             <h5><%= firstStory[0].created_at %></h5>
             <h5>&centerdot;</h5>
