@@ -5,14 +5,13 @@ const auth = (db) =>{
 
     console.log("--> user:", userName);
 
-    // responds with redirect if no sessions
     if (!userName) {
       console.log("--> auth: not logged in");
       res.json({redirect: "/register"});
       return;
     }
 
-    const queryString = `SELECT id FROM users 
+    const queryString = `SELECT id FROM users
     WHERE users.username = $1`;
 
     db.query(queryString, [ userName ])
@@ -27,6 +26,5 @@ const auth = (db) =>{
       });
   };
 };
-
 
 module.exports = auth;

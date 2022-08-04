@@ -39,12 +39,11 @@ module.exports = (db) => {
       req.body.photo_url,
       req.params.storyId
     ];
-    
+
     return db.query(queryString, queryParams)
       .then(result => {
         const story = result.rows[0];
-        // res.send({story: result.rows[0], message: "successfully updated"})
-        // res.render('story', story)
+
         res.redirect(`/story/${story.storyurl_id}`);
       })
       .catch(err => {

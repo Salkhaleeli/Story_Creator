@@ -5,13 +5,12 @@ const auth = (db) =>{
 
     console.log("--> user:", userName);
 
-    // responds with redirect if no sessions
     if (!userName) {
       console.log("--> auth-redirect: not logged in");
       return res.redirect('/register');
     }
 
-    const queryString = `SELECT id FROM users 
+    const queryString = `SELECT id FROM users
     WHERE users.username = $1`;
 
     db.query(queryString, [ userName ])
