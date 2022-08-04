@@ -210,7 +210,6 @@ const completeStory = (db)=>{
           if (userId !== data.rows[0].owner_id) {
             throw Error("Creator is not owner of story");
           }
-          // Next request
           return db.query(updateContributionDuery, [req.params.storyId, userId]);
         })
         .then((dataTwo) => {
