@@ -324,7 +324,7 @@ button,
 input,
 select,
 textarea {
-  color: grey;
+  color: black;
 }
 
 ::-moz-selection {
