@@ -113,7 +113,7 @@ section {
   font-size: 3em;
   line-height: 1em;
   margin: 25px 0;
-  color: rgb(134 25 143);
+  color: rgb(146, 118, 148);
 }
 
 @media only screen and (max-width: 667px) {
@@ -222,8 +222,13 @@ body {
   background-color: #beaeae;
 }
 
+.text-author{
+  color: rgb(188, 209, 204);
+}
 
-
+.text-title{
+  color:rgb(188, 209, 204);
+}
 
 
 

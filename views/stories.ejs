@@ -48,11 +48,13 @@
       <div class="story-container">
         <div class="text-container">
           <a href="/story/<%= story.url_id %>">
-            <h1><%= story.title %></h1>
+            <h1 class="text-title"><%= story.title %></h1>
             <h3><%= (story.content).slice(0, 100) %>...</h3>
           </a>
+          <div class="text-author">
             <h4>By <%= story.created_by %></h4>
             <h4><%= story.total_contributions %> contributions</h4>
+          </div>
             <div class="status-container">
               <h5><%= story.created_at %></h5>
               <h5>&centerdot;</h5>
