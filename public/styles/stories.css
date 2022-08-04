@@ -82,9 +82,7 @@ section {
   height: 100%;
   width: 100%;
   background-position: center;
-  /* Center the image */
   background-repeat: no-repeat;
-  /* Do not repeat the image */
   background-size: cover;
 }
 
@@ -106,7 +104,6 @@ section {
 .first-story-container .text-container {
   width: 95%;
   word-wrap: break-word;
-  /* margin: 0 5%; */
 }
 
 .first-story-container .text-container h1 {
@@ -150,7 +147,6 @@ body .line{
 .main-page {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
 }
 
 #main-references{
