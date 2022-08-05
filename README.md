@@ -6,24 +6,25 @@ A Full-Stack app that allows registered users to create and post short stories. 
 
 ### Home page
 
-!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Home-page.png)
-!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Home-page2.png)
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Home.gif)
+
 
 ### Log-in page
 
-!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Log-in-page.png)
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Log-in-page.gif)
 
 ### Register page
 
-!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Register-user.png)
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Register-user.gif)
 
 ### Create story page
 
-!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Create-story.png)
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Create-stories.gif)
 
 ### Stories page
 
-!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/Stories-page.png)
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Stories-page.gif)
+
 
 ## Getting Started
 
