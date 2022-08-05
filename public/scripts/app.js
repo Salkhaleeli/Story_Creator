@@ -11,7 +11,6 @@ $(function() {
     return p.innerHTML;
   };
   // sample input object "contribution":
-  // { username: "skater_boy", content: "He stood up and stared", created_at: 2020-07-28 00:00:00, }
   const createPostElement = function(contribution) {
 
     // condition to check for append button.
@@ -36,7 +35,7 @@ $(function() {
           </div>
         </header>
         <div class="contribution-content">
-          <p>${escape(contribution.content)}</p> 
+          <p>${escape(contribution.content)}</p>
         </div>
         <footer>
           <div>${moment(contribution.created_at).fromNow(true)} ago</div>
@@ -62,7 +61,6 @@ $(function() {
 
     $contribution.find('.append-btn').on('click', (event) => {
       event.preventDefault();
-      // $.put(`/api/story/${storyId}/contributions/append/${contribution.id}`)
       return $.ajax({
         method: 'PUT',
         url: `/api/story/${storyId}/contributions/append/${contribution.id}`
@@ -166,7 +164,6 @@ $(document).ready(function() {
     $('section form .input').each(function(index, input) {
       const data = $(input);
       if (!data.val()) {
-      // console.log('there no value!!!',data.attr('name'));
         event.preventDefault();
         $('section .alert').slideDown();
       } else {
