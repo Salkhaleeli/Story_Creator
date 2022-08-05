@@ -25,6 +25,10 @@ A Full-Stack app that allows registered users to create and post short stories. 
 
 !["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Stories-page.gif)
 
+### Extra features
+
+!["screenshot description"](https://github.com/Salkhaleeli/Story_Creator/blob/master/docs/gif/Extra-feature.gif)
+
 
 ## Getting Started
 
